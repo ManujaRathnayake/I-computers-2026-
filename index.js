@@ -7,7 +7,7 @@ import authenticateUser from "./middlewares/authentication.js";
 import productRouter from "./Routers/productRouter.js";
 
 const app = express();
-const mongodbURI = "mongodb+srv://Admin:1234@cluster0.nq5mdel.mongodb.net/?appName=Cluster0";
+const mongodbURI = "mongodb+srv://Admin:password1012@321@cluster0.nq5mdel.mongodb.net/?appName=Cluster0";
 mongoose.connect(mongodbURI).then(
     ()=>{
         console.log("connected to mongoDB")
