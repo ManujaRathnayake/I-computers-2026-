@@ -21,10 +21,6 @@ app.use(authenticateUser)
 app.use("/users" , userRouter)
 app.use("/products" ,productRouter)
 
-
-
-
-
 let port = 3000;
 
 app.listen(port, () => {
