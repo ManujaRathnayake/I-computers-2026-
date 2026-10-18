@@ -1,4 +1,6 @@
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config()
 export default function authenticateUser(req,res,next){
         const header = req.header("Authorization")
         
@@ -8,7 +10,7 @@ export default function authenticateUser(req,res,next){
             
 
 
-            jwt.verify(token , "I-computers-secret-Key" , 
+            jwt.verify(token ,  process.env.I_computers_secret_Key , 
                 (error , decoded)=>{
                     if(decoded == null){
                         res.json({
