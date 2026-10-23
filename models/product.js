@@ -28,7 +28,7 @@ const productSchema = new mongoose.Schema({
         required : false,
     },
     images : {
-        type : String,
+        type : [String],
         required : true,
         default : [
             "images/default-product.png",

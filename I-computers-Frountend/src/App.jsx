@@ -5,14 +5,16 @@ import AdminPage from './pages/adminPage'
 import Testpage from './test'
 import LoginPage from './pages/loginpage'
 import { Toaster } from 'react-hot-toast'
+import AdmineditProductPage from './pages/admin/adminEditProductPage'
 
 function App() {
   return (
     <div className='w-full h-screen flex justify-center items-center bg-primary text-secondary'>
     <Toaster position='top-center'/> 
     <Routes>
-      <Route path="/" element={<Homepage />} />
+      <Route path="/*" element={<Homepage />} />
       <Route path="/admin/*" element={<AdminPage />} />
+      
       <Route path="/test" element={<Testpage />} />
       <Route path="/login" element={<LoginPage />} />
     </Routes>
