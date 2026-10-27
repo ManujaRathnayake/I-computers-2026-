@@ -5,7 +5,7 @@ export default function Productcard(props){
     const products = props.product
 
     return(
-        <Link to={"/overview"} state={products} className="w-[300px] h-[450px] rounded-lg shadow-2xl m-10 p-2 bg-white overflow-hidden cursor-pointer flex flex-col hover:[&_.primary-image]:opacity-0 justify-between">
+        <Link to={"/overview/" + products.productId} state={products} className="w-[300px] h-[450px] rounded-lg shadow-2xl m-10 p-2 bg-white overflow-hidden cursor-pointer flex flex-col hover:[&_.primary-image]:opacity-0 justify-between">
             
             <div className="relative w-[300px] h-[300px] bg-red">
                <img src={products.images?.[1]} className="w-[300px] h-[300px] object-cover absolute top-0 left-0 bg-white" alt="" />
