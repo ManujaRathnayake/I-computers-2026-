@@ -1,12 +1,12 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import api from "../utils/Api"
 import toast from "react-hot-toast"
 import LoadingAnimation from "../components/loadinganimation"
 import ImageSlideShow from "../components/imageslideshow"
 import getFormattedPrice from "../utils/priceformat"
-import { addToCart, getcart } from "../utils/cart"
+import { addToCart} from "../utils/cart"
 
 export default function ProductOverViewPage(){
     const parameters = useParams()
@@ -115,13 +115,24 @@ export default function ProductOverViewPage(){
                         }
                         
                         >Add to Cart</button>
-                        <button 
-                        onClick={
-                            ()=>{
-                                console.log(getcart())
-                            }
+                        <Link 
+                        to="/checkout"
+                        state={
+                            [
+                                {
+                                    product:{
+                                        productId : product.productId,
+                                        name : product.name,
+                                        image : product.images[0],
+                                        labelledPrice : product.labelledPrice,
+                                        price : product.price
+                                    },
+                                    quantity : 1
+                                }
+                            ]
                         }
-                        className="w-62.5 h-16 bg-blue-500  text-white text-xl font-semibold rounded-lg cursor-pointer hover:bg-blue-700 transition-colors duration-300">Buy Now</button>
+
+                        className="w-62.5 h-16 bg-blue-500  text-white text-xl font-semibold rounded-lg cursor-pointer hover:bg-blue-700 transition-colors duration-300">Buy Now</Link>
                         </div>
                     </div>
                     

@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 import authenticateUser from "./middlewares/authentication.js";
 import productRouter from "./Routers/productRouter.js";
 import dotenv from "dotenv";
+import orderRouter from "./Routers/orderRouter.js";
 
 
 dotenv.config()
@@ -24,7 +25,7 @@ app.use(authenticateUser)
 
 app.use("/api/users" , userRouter)
 app.use("/api/products" ,productRouter)
-
+app.use("/api/orders" , orderRouter)
 let port = 3000;
 
 app.listen(port, () => {
