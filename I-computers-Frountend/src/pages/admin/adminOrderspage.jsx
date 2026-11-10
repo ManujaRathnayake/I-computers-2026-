@@ -198,6 +198,7 @@ export default function AdminOrdersPage() {
                         </td>
 
                         <td className="whitespace-nowrap px-5 py-4 text-center flex justify-center items-center">
+                        
                           <OrderDetailsModal order={item} refresh={()=> setIsOrdersAreLoaded(false)}/>
                         </td>
                       </tr>

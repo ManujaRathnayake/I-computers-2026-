@@ -22,7 +22,6 @@ export default async function createOrder(req,res){
         addressLineTwo : req.body.addressLineTwo,
         city : req.body.city,
         state : req.body.state,
-        date : user.date,
         total : 0,
         postalcode : req.body.postalcode,
         phoneNumber : req.body.phoneNumber,
@@ -67,7 +66,7 @@ export default async function createOrder(req,res){
             return
         }else{
             orderData.items.push({
-                Product : {
+                product : {
                     productId : product.productId,
                     name : product.name,
                     price : product.price,

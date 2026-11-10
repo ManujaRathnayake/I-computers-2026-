@@ -60,7 +60,7 @@ const orderSchema = new mongoose.Schema(
         },
         items: [
             {
-                Product: {
+                product: {
                     productId: {
                         type: String,
                         required: true
