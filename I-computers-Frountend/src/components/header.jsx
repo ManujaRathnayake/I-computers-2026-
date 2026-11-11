@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa6";
+import UserData from "./userData";
 
 export default function Header(){
     return(
@@ -13,6 +14,10 @@ export default function Header(){
                 <Link to="/" className="text-white text-lg font-semibold ">Home</Link>
                 <Link to="/products" className="text-white text-lg font-semibold ">Products</Link>
                 <Link to="/contact-us" className="text-white text-lg font-semibold ">Contact us</Link>
+            </div>
+
+            <div className="  absolute right-30 flex justify-center items-center">
+                <UserData/>
             </div>
 
             <Link to="/cart" className="w-[50px] h-[50px] text-white text-2xl absolute right-10 flex justify-center items-center">

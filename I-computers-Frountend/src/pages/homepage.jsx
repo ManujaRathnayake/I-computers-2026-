@@ -5,6 +5,9 @@ import Contactus from "./contactUsPage"
 import ProductOverViewPage from "./productOverViewPage"
 import Cart from "./admin/cart"
 import CheckoutPage from "./admin/checkout"
+
+import CustomerOrdersPage from "./customerMyOrdersPage"
+import SettingsPage from "./settings"
 export default function Homepage() {
   return (
     <div className="w-full h-screen bg-primary flex flex-col shrink-0">
@@ -18,6 +21,8 @@ export default function Homepage() {
           <Route path="/cart" element={<Cart/>}></Route>
           <Route path="/checkout" element={<CheckoutPage/>}></Route>
           <Route path="/overview/:productId" element={<ProductOverViewPage/>}></Route>
+          <Route path="/my-orders" element={<CustomerOrdersPage/>}></Route>
+          <Route path="/settings" element={<SettingsPage/>}></Route>
         </Routes>
       </div>
     </div>

@@ -150,3 +150,29 @@ export async function  getOrders(req,res){
         })
     }
     }
+
+export async function updateOrderStatusAndNotes(req, res) {
+    if (req.User && req.User.isAdmin) {
+        try {
+            const orderId = req.params.orderId;
+            
+            await Order.findOneAndUpdate(
+                { orderId: orderId }, // මෙතන orderId එකෙන් ඩේටාබේස් එක සෙවීම
+                { status: req.body.status, notes: req.body.notes }
+            );
+
+            res.status(200).json({
+                message: "Order Status and notes are Successfully updated"
+            });
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({
+                message: "Error updating order Status and notes"
+            });
+        }
+    } else {
+        res.status(403).json({
+            message: "You are not allowed to perform this Action"
+        });
+    }
+}

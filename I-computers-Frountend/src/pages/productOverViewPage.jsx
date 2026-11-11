@@ -1,12 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
-import api from "../utils/Api"
+
 import toast from "react-hot-toast"
 import LoadingAnimation from "../components/loadinganimation"
 import ImageSlideShow from "../components/imageslideshow"
 import getFormattedPrice from "../utils/priceformat"
 import { addToCart} from "../utils/cart"
+import api from "../utils/api"
 
 export default function ProductOverViewPage(){
     const parameters = useParams()
@@ -26,7 +27,7 @@ export default function ProductOverViewPage(){
                 }
             ).catch(
                 (error)=>{
-                    toast.error(error?.Response?.data?.message)
+                    toast.error(error?.response?.data?.message)
                     setStatus("error")
                 }
             )
