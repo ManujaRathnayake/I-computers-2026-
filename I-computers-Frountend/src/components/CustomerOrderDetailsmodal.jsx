@@ -1,6 +1,6 @@
-import axios from "axios";
+
 import { useState } from "react";
-import toast from "react-hot-toast";
+
 import { FaEye } from "react-icons/fa6";
 import getFormattedPrice from "../utils/priceformat";
 

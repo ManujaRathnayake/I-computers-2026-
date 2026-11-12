@@ -8,6 +8,8 @@ import CheckoutPage from "./admin/checkout"
 
 import CustomerOrdersPage from "./customerMyOrdersPage"
 import SettingsPage from "./settings"
+import BottomNavigationBar from "../components/bottomnavigationbar"
+import NotFoundPage from "./notFoundPage"
 export default function Homepage() {
   return (
     <div className="w-full h-screen bg-primary flex flex-col shrink-0">
@@ -23,8 +25,11 @@ export default function Homepage() {
           <Route path="/overview/:productId" element={<ProductOverViewPage/>}></Route>
           <Route path="/my-orders" element={<CustomerOrdersPage/>}></Route>
           <Route path="/settings" element={<SettingsPage/>}></Route>
+          <Route path="*" element={<NotFoundPage/>}></Route>
+          
         </Routes>
-      </div>
+        <BottomNavigationBar/>
+        </div>
     </div>
   )
 }

@@ -28,7 +28,7 @@ export default function ProductsPage(){
 
     return(
         <>
-            <div className="w-full h-full flex justify-center gap-2 flex-wrap ">
+            <div className="w-full h-full flex justify-center gap-2 flex-wrap lg:pb-0 ">
                 {
                     products.map(
                         (item)=>{
@@ -38,6 +38,7 @@ export default function ProductsPage(){
                         }
                     )
                 }
+                <div className="w-full h-[100px]"></div>
             </div>
         
         

@@ -8,16 +8,16 @@ export default function Cart(){
     const [cart, setCart] = useState(getcart())
     return(
         <>
-        <div className="w-full min-h-full flex flex-col pb-20 p-5 items-center ">
+        <div className="w-full min-h-full flex flex-col lg:pb-20 pb-[200px] p-5 items-center  ">
             {
                 cart.map(
                     (item)=>{
                         return(
                             // ප්‍රධාන සුදු කාඩ් එක
-                            <div key={item.product.productId} className="bg-white  w-[500px] h-[150px] gap-4 rounded-lg shadow-2xl  flex p-2 m-1 items-center relative">
+                            <div key={item.product.productId} className="bg-white flex-col lg:flex-row w-full  lg:h-[150px] lg:w-[500px]   gap-4 rounded-lg shadow-2xl  flex p-2 m-1 lg:items-center relative">
                                 <img src={item.product.image} alt="" className="w-[100px] h-[100px] object-cover rounded-l-lg"/>
                                 
-                                <div className="h-full w-[400px] relative"> {/* මෙතැනට relative එකතු කරන්න */}
+                                <div className="h-full w-full lg:w-[400px] relative"> {/* මෙතැනට relative එකතු කරන්න */}
                                     <h1 className="text-lg font-semibold">{item.product.name}</h1>
                                     <p className="text-sm text-gray-300">{item.product.productId}</p>
                                     {
@@ -60,7 +60,7 @@ export default function Cart(){
                     }
                 )
             }
-             <div  className="bg-white w-[500px] rounded-t-lg p-4 shadow-2xl items-center flex justify-between border fixed bottom-0 ">
+             <div  className="bg-white w-full lg:w-[500px] rounded-t-lg p-4 shadow-2xl items-center flex justify-between border fixed lg:bottom-0 bottom-[82px]">
                 <Link to="/checkout" state={cart} className="bg-accent text-xl rounded-xl px-4 text-white py-2  font-semibold">Checkout</Link>
                 <p className="text-2xl font-bold ml-4"> Total : {getFormattedPrice(getCartTotal(cart))}</p>
             

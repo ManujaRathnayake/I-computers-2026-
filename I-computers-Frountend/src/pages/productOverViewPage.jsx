@@ -41,7 +41,7 @@ export default function ProductOverViewPage(){
     return(
         <>
         
-        <div className="w-full h-full flex justify-center items-center">
+        <div className="w-full h-full flex justify-center p-2 m-2 items-center">
             
 
             {
@@ -58,10 +58,10 @@ export default function ProductOverViewPage(){
 
             {
                 //sucess
-                status == "Sucess" && <div className="w-full h-full bg-white flex">
+                status == "Sucess" && <div className="w-full h-full flex lg:flex-row flex-col bg-white ">
 
-                    <div className="w-1/2 h-full  flex justify-center items-center"><ImageSlideShow images={product.images}/></div>
-                    <div className="w-1/2 h-full  flex flex-col p-5">
+                    <div className=" w-full lg:w-1/2 h-full  p-5 flex justify-center items-center"><ImageSlideShow images={product.images}/></div>
+                    <div className=" w-full lg:w-1/2 h-full  flex flex-col lg:p-5 ">
                     <h1 className="text-3xl font-bold ">{product.name}
                         {
                         
@@ -101,17 +101,18 @@ export default function ProductOverViewPage(){
                         <div className="w-full mt-5 flex gap-10">
                             <span className="text-lg font-semibold">{product.catagory}</span>
                         </div>
-                        <p className="text-lg mt-5">
+                        <p className="text-lg mt-5 lg:mb-0 mb-[190px]">
                             {
                                 product.description
                             }
                         </p>
 
-                        <div className="flex mt-5 gap-5">
+                        <div className="flex mt-5 gap-5 lg:static fixed bottom-[82px] right-0 p-2 backdrop:blur w-full">
                         <button className="w-62.5 h-16 bg-green-500 text-white text-xl font-semibold rounded-lg cursor-pointer hover:bg-green-700 transition-colors duration-300"
                         onClick={
                             ()=>{
                                 addToCart(product ,1)
+                                toast.success("Product added to cart")
                             }
                         }
                         

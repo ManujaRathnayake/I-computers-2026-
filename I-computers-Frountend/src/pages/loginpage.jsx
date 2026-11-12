@@ -39,10 +39,10 @@ export default function LoginPage(){
     }
     return(
         <div className="w-full h-screen flex justify-center items-center bg-[url('/login-bg.jpg')] bg-center bg-cover ">
-            <div className="w-[50%] h-full ">
+            <div className="w-0 lg:w-[50%] h-full ">
                 
             </div>
-            <div className="w-[50%] h-full  flex justify-center items-center">
+            <div className="w-[90%] lg:w-[50%] h-full  flex justify-center items-center">
                 <div className="w-[400px] h-[500px] backdrop-blur-lg rounded-xl shadow-2xl flex flex-col justify-center items-center">
                     <h1 className="text-4xl font-bold mb-8 text-gray-100">Sign in</h1>
                     <input 
